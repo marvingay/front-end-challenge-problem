@@ -1,18 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     public title = 'front-end-challenge-problem';
 
-    constructor(private httpClient: HttpClient) {
-    }
-
-    public ngOnInit(): void {
-
+    constructor() {
     }
 }

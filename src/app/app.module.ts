@@ -6,10 +6,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BackendInterceptor} from './backend-interceptor/BackendInterceptor';
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        HomeComponent,
     ],
     imports: [
         BrowserModule,

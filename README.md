@@ -1,27 +1,28 @@
-# FrontEndChallengeProblem
+# 86 Repairs - Front End Challenge Problem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+## Specification
 
-## Development server
+* Create a new component that displays equipment from our predefined data source
+* Add a link to the new component as the fifth element in the list on [the main page](src/app/home/home.component.html)
+* Retrieve the equipment inventory via an HTTP GET request through an `HttpClient` instance to `${environment.apiUrl}/equipment`
+    * Calls to this endpoint are intercepted by the [BackendInterceptor](src/app/backend-interceptor/BackendInterceptor.ts) class
+        * The response is the `Array<object>` defined in [EquipmentData.ts](src/app/backend-interceptor/EquipmentData.ts)
+        * There is a 20% chance that the request will throw an error with a 500 HTTP status code
+* Conditionally display each piece of equipment based on the following characteristics:
+    * If `equipment_type` or `manufacturer` are missing, apply a yellow background to the piece of equipment consistent with the design provided
+    * If missing photos, display “NO PHOTOS” consistent with the design provided
+    * Do not display equipment if `active` is `false`
+* An equipment card should be collapsed by default and expand on click to show more details. See designs provided.
+* Bonus:
+    * Provide filters based on the value or status of one or more fields
+
+## Rules of engagement
+
+* Fork the repository
+* Spend one hour fulfilling the spec above
+* Commit and push your work as-is
+* Email us a link to your repository 
+
+## Development
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
